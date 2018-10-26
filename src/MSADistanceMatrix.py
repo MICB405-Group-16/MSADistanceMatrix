@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 
 class Sequence:
     def __init__(self, name, sequence):
@@ -76,3 +77,12 @@ class MSADistanceMatrix:
         matrix = self._generate_matrix(sequences)
         string = self._parse_to_string(sequences, matrix)
         return string
+
+def main():
+    path = sys.argv[1]
+    matrix = MSADistanceMatrix()
+    string = matrix.get_distance_matrix_string(path)
+    print(string)
+
+if __name__ == "__main__":
+    main()
